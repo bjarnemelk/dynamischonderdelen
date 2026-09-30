@@ -15,7 +15,42 @@
         width: 100%;
         margin: 0px;
         background-color: rgb(17, 42, 69);;
+        color: white;
     }
+    .gallery{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 32px;
+        margin-top: 10px;
+    }
+       .gallery img {
+       width: 100%;
+       aspect-ratio: 2 / 3;
+       object-fit: cover;
+       cursor: pointer;
+   }
+   .lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.85);
+   }
+   .lightbox img {
+    height: 600px;
+    width: 400px;
+    max-height: 80vh;
+    max-width: 90vw;
+   }
+   .lightboxinfo {
+    max-width: 450px;
+    margin-left: 16px;
+   }
     .html
     {
         width: 100%;    
