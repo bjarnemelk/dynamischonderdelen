@@ -29,6 +29,12 @@
        object-fit: cover;
        cursor: pointer;
    }
+   .searchbar {
+   display: block;
+   margin: 16px auto;
+   width: 25%;
+   }
+
    .lightbox {
     display: none;
     position: fixed;

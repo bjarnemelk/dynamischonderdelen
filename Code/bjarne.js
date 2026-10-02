@@ -8,6 +8,7 @@ const lightboxDate = document.getElementById("lightbox-date")
 const lightboxDirector = document.getElementById("lightbox-director")
 const lightboxGenre = document.getElementById("lightbox-genre")
 const lightboxCast = document.getElementById("lightbox-cast")
+const searchbar = document.getElementById("searchInput")
 const films = [
     {name : "Crawlers", date : "2026/10/01", director : ["Angel Gomez Hernandez"], genre : ["Horror"],
     cast : ["William Miller", "Melina Matthews", "Gregg Sulkin", "Matilda Lutz",], poster : "../Images/crawlers.avif"},
@@ -96,7 +97,20 @@ cards.forEach(function(card){
         lightboxGenre.innerText = "Genre : " + chosenFilm.genre.join(", ")
         lightboxCast.innerText = "Cast : " + chosenFilm.cast.join(", ")
     })
+    
+    
 })
+searchInput.addEventListener("input", function() {
+    const searchTerm = searchInput.value.toLowerCase();
+    cards.forEach(function(card) {
+        const filmName = card.querySelector("h3").innerText.toLowerCase();
+        if (filmName.includes(searchTerm)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+}) })
+
 lightbox.addEventListener("click", function() {
     lightbox.style.display = "none";
 });
